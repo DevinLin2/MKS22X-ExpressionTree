@@ -14,10 +14,12 @@ public class ExpressionTree{
   /*return the expression as a postfix notation string without parenthesis*/
   /* The sample tree would be: "3 2 10 * +"     */
   public String toStringPostfix(){
-    /*you are to write this method*/
-    return "";
+    if (isOp()) {
+      return getLeft().toStringPostfix() + " " + getRight().toStringPostfix() + " " + getOp();
+    }
+    return getValue() + " ";
   }
-
+  
   /*return the expression as a prefix notation string without parenthesis*/
   /* The sample tree would be: "+ 3 * 2 10"     */
 
@@ -31,10 +33,11 @@ public class ExpressionTree{
   /*return the value of the specified expression tree*/
 
   public double evaluate(){
-    /*you are to write this method*/
-    return 0.0;
-
+    if (isOp ()) {
+      return apply(getOp(), getLeft().evaluate(), getRight.evaluate());
     }
+    return getValue();
+  }
 
 
   /*use the correct operator on both a and b, and return that value*/
@@ -42,7 +45,7 @@ public class ExpressionTree{
     /*you are to write this method*/
     return 0.0;
 
-    }
+  }
 
   private char op;
   private double value;
