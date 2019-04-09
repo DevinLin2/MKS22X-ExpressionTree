@@ -10,7 +10,7 @@ public class ExpressionTree{
     if (isOp()) {
       return "(" + getLeft().toString() + " " + getOp() + " " + getRight().toString() + ")";
     }
-    return getValue() + " ";
+    return getValue() + "";
   }
 
   /*return the expression as a postfix notation string without parenthesis*/
@@ -19,7 +19,7 @@ public class ExpressionTree{
     if (isOp()) {
       return getLeft().toStringPostfix() + " " + getRight().toStringPostfix() + " " + getOp();
     }
-    return getValue() + " ";
+    return getValue() + "";
   }
 
   /*return the expression as a prefix notation string without parenthesis*/
@@ -29,7 +29,7 @@ public class ExpressionTree{
     if (isOp()) {
       return getOp() + " " + getLeft().toStringPrefix() + " " + getRight().toStringPrefix();
     }
-    return getValue() + " ";
+    return getValue() + "";
   }
 
 
